@@ -1,8 +1,7 @@
 
 # Project Plus (Weatherscan Local)
 
-A simulator based on The Weather Channel's "Weatherscan Local" channel. Running from 1999 to 2004, Weatherscan Local was a 24/7 weather information network, providing constant hyper-local data for the viewer's area. This channel ran using a custom WeatherSTAR XL unit installed at various cable headends throughout the country. This service was inevitably replaced by the newer and more popular version of Weatherscan, hosted on the IntelliSTAR 1.
-
+This is a recreated emulator of The Weather Channel's discontinued Weatherscan Local wich ran in the late 1990s through early 2000s, eventually being rebranded to Weatherscan which was discontinued on December 14th 2022. This was all made by tyetenna. This was modified by me. 
 
 
 ## Disclaimer
