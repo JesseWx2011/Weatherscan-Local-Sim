@@ -1,4 +1,5 @@
 import { apiKey } from './config.js';
+import { weatherIcons  } from './config.js';
 
 var locations = [];
 var currentObs = {};
