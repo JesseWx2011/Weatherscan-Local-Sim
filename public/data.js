@@ -689,7 +689,7 @@ async function updateFieldsWithNewData() {
             } else if (dataType === 'icon') {
                 const imgElement = document.querySelector(`#${fieldId}_img`);
                 if (imgElement) {
-                    imgElement.src = `./images/wxicons/${currentObs[locationId].iconCode}.png`;
+                    imgElement.src = `./images/wxicons/${weatherIcons}/${currentObs[locationId].iconCode}.png`;
                     // console.log(`Updated image src for field: ${fieldId} with src: ./images/wxicons/${sevenDay[locationId].days[part].icon}.png`);
                 }
             } else if (dataType === 'phrase') {
