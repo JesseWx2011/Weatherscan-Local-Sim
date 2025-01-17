@@ -7,7 +7,7 @@ const locale = "neighborhood";
 
 const affiliateName = "Comcast Digital Cable";
 
-const apiKey = '';
+const apiKey = '8de2d8b3a93542c9a2d8b3a935a2c909';
 
 const weatherIcons = '2010' // XL or 2010
 
