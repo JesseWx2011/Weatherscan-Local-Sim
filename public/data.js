@@ -665,7 +665,7 @@ async function updateFieldsWithNewData() {
             if (dataType === 'wxPhraseMedium' || 'city') {
                 const imgElement = document.querySelector(`#${fieldId}_img`);
                 if (imgElement) {
-                    imgElement.src = `./images/wxicons/${currentObs[locationId].iconCode}.png`;
+                    imgElement.src = `./images/wxicons/${weatherIcons}/${currentObs[locationId].iconCode}.png`;
                     // console.log(`Updated image src for field: ${fieldId} with src: ./images/wxicons/${currentObs[locationId].iconCode}.png`);
                 }
             }

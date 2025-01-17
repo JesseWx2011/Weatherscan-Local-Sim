@@ -9,7 +9,9 @@ const affiliateName = "Comcast Digital Cable";
 
 const apiKey = '';
 
+const weatherIcons = '2010' // XL or 2010
+
 // Define the enabled packages
 const enabledPackages = [Core(locale)];
 
-export { locale, affiliateName, enabledPackages, apiKey };
+export { locale, affiliateName, enabledPackages, apiKey, weatherIcons };
