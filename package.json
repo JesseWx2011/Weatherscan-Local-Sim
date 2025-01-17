@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "express": "^4.21.2",
-    "mapbox-gl": "^3.9.0"
+    "mapbox-gl": "^3.9.0",
+    "package.json": "^2.0.1"
   },
   "name": "weatherscanlocal",
   "version": "1.0.0",
