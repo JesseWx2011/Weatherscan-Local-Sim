@@ -1,4 +1,4 @@
-import { locale as configLocale, enabledPackages } from './config.js';
+import { locale as configLocale, enabledPackages, weatherIcons } from './config.js';
 import { currentObs, thirtysixHour, sevenDay, almanac, primaryLoc, nearbyLocs, dataPopulationPromise, refreshData, updateFieldsWithNewData } from './data.js';
 import { createSlideElements } from './client.js';
 
@@ -106,28 +106,28 @@ const Core = async (locale) => {
             { text: currentObs[primaryLoc.locId].windDirectionCardinal + " " + currentObs[primaryLoc.locId].windSpeed, id: 'nowWind', className: 'wind', dataType:"windSpeedDir", imgSrc: null },
             { text: currentObs[primaryLoc.locId].windGust ? currentObs[primaryLoc.locId].windGust + " mph" : "None", id: 'nowGusts', className: 'gusts', dataType:"windGust", imgSrc: null },
             { text: currentObs[primaryLoc.locId].temperature, id: 'nowTemperature', className: 'temperature', dataType:"temperature", imgSrc: null },
-            { text: currentObs[primaryLoc.locId].wxPhraseMedium, id: 'nowCondition', className: 'condition', dataType:"wxPhraseMedium", imgSrc: `./images/wxicons/${currentObs[primaryLoc.locId].iconCode}.png` }
+            { text: currentObs[primaryLoc.locId].wxPhraseMedium, id: 'nowCondition', className: 'condition', dataType:"wxPhraseMedium", imgSrc: `./images/wxicons/${weatherIcons}/${currentObs[primaryLoc.locId].iconCode}.png` }
         ] },
         { id: 'Nearby1', src: './images/background/' + locale + '/nearby.png', text: 'Current Conditions', noFade: false, duration: 10, slide: './images/Slide_Near_36.png', overlay: './images/Plus_Product.png', fields: [
             { text: "TEMP", id: 'nearTempLabel', className: 'tempLabel', imgSrc: null },
             { text: "WIND", id: 'nearWindLabel', className: 'windLabel', imgSrc: null },
             // Nearby City 1
-            { text: currentObs[nearbyLocs[0].locId].city, id: 'nearCity1', className: 'city_1', dataType:"city", imgSrc: `./images/wxicons/${currentObs[nearbyLocs[0].locId].iconCode}.png` },
+            { text: currentObs[nearbyLocs[0].locId].city, id: 'nearCity1', className: 'city_1', dataType:"city", imgSrc: `./images/wxicons/${weatherIcons}/${currentObs[nearbyLocs[0].locId].iconCode}.png` },
             { text: currentObs[nearbyLocs[0].locId].temperature, id: 'nearTemp1', className: 'temperature_1', dataType:"temperature", imgSrc: null },
             { text: currentObs[nearbyLocs[0].locId].windDirectionCardinal, id: 'nearWindDir1', className: 'windDir_1', dataType:"windDirectionCardinal", imgSrc: null },
             { text: currentObs[nearbyLocs[0].locId].windSpeed, id: 'nearWindSpeed1', className: 'windSpeed_1', dataType:"windSpeed", imgSrc: null },
             // Nearby City 2
-            { text: currentObs[nearbyLocs[1].locId].city, id: 'nearCity2', className: 'city_2', dataType:"city", imgSrc: `./images/wxicons/${currentObs[nearbyLocs[1].locId].iconCode}.png` },
+            { text: currentObs[nearbyLocs[1].locId].city, id: 'nearCity2', className: 'city_2', dataType:"city", imgSrc: `./images/wxicons/${weatherIcons}/${currentObs[nearbyLocs[1].locId].iconCode}.png` },
             { text: currentObs[nearbyLocs[1].locId].temperature, id: 'nearTemp2', className: 'temperature_2', dataType:"temperature", imgSrc: null },
             { text: currentObs[nearbyLocs[1].locId].windDirectionCardinal, id: 'nearWindDir2', className: 'windDir_2', dataType:"windDirectionCardinal", imgSrc: null },
             { text: currentObs[nearbyLocs[1].locId].windSpeed, id: 'nearWindSpeed2', className: 'windSpeed_2', dataType:"windSpeed", imgSrc: null },
             // Nearby City 3
-            { text: currentObs[nearbyLocs[2].locId].city, id: 'nearCity3', className: 'city_3', dataType:"city", imgSrc: `./images/wxicons/${currentObs[nearbyLocs[2].locId].iconCode}.png` },
+            { text: currentObs[nearbyLocs[2].locId].city, id: 'nearCity3', className: 'city_3', dataType:"city", imgSrc: `./images/wxicons/${weatherIcons}/${currentObs[nearbyLocs[2].locId].iconCode}.png` },
             { text: currentObs[nearbyLocs[2].locId].temperature, id: 'nearTemp3', className: 'temperature_3', dataType:"temperature", imgSrc: null },
             { text: currentObs[nearbyLocs[2].locId].windDirectionCardinal, id: 'nearWindDir3', className: 'windDir_3', dataType:"windDirectionCardinal", imgSrc: null },
             { text: currentObs[nearbyLocs[2].locId].windSpeed, id: 'nearWindSpeed3', className: 'windSpeed_3', dataType:"windSpeed", imgSrc: null },
             // Nearby City 4
-            { text: currentObs[nearbyLocs[3].locId].city, id: 'nearCity4', className: 'city_4', dataType:"city", imgSrc: `./images/wxicons/${currentObs[nearbyLocs[3].locId].iconCode}.png` },
+            { text: currentObs[nearbyLocs[3].locId].city, id: 'nearCity4', className: 'city_4', dataType:"city", imgSrc: `./images/wxicons/${weatherIcons}/${currentObs[nearbyLocs[3].locId].iconCode}.png` },
             { text: currentObs[nearbyLocs[3].locId].temperature, id: 'nearTemp4', className: 'temperature_4', dataType:"temperature", imgSrc: null },
             { text: currentObs[nearbyLocs[3].locId].windDirectionCardinal, id: 'nearWindDir4', className: 'windDir_4', dataType:"windDirectionCardinal", imgSrc: null },
             { text: currentObs[nearbyLocs[3].locId].windSpeed, id: 'nearWindSpeed4', className: 'windSpeed_4', dataType:"windSpeed", imgSrc: null },
@@ -136,22 +136,22 @@ const Core = async (locale) => {
             { text: "TEMP", id: 'nearTempLabel', className: 'tempLabel', imgSrc: null },
             { text: "WIND", id: 'nearWindLabel', className: 'windLabel', imgSrc: null },
             // Nearby City 5
-            { text: currentObs[nearbyLocs[4].locId].city, id: 'nearCity5', className: 'city_1', dataType:"city", imgSrc: `./images/wxicons/${currentObs[nearbyLocs[4].locId].iconCode}.png` },
+            { text: currentObs[nearbyLocs[4].locId].city, id: 'nearCity5', className: 'city_1', dataType:"city", imgSrc: `./images/wxicons/${weatherIcons}/${currentObs[nearbyLocs[4].locId].iconCode}.png` },
             { text: currentObs[nearbyLocs[4].locId].temperature, id: 'nearTemp5', className: 'temperature_1', dataType:"temperature", imgSrc: null },
             { text: currentObs[nearbyLocs[4].locId].windDirectionCardinal, id: 'nearWindDir5', className: 'windDir_1', dataType:"windDirectionCardinal", imgSrc: null },
             { text: currentObs[nearbyLocs[4].locId].windSpeed, id: 'nearWindSpeed5', className: 'windSpeed_1', dataType:"windSpeed", imgSrc: null },
             // Nearby City 6
-            { text: currentObs[nearbyLocs[5].locId].city, id: 'nearCity6', className: 'city_2', dataType:"city", imgSrc: `./images/wxicons/${currentObs[nearbyLocs[5].locId].iconCode}.png` },
+            { text: currentObs[nearbyLocs[5].locId].city, id: 'nearCity6', className: 'city_2', dataType:"city", imgSrc: `./images/wxicons/${weatherIcons}/${currentObs[nearbyLocs[5].locId].iconCode}.png` },
             { text: currentObs[nearbyLocs[5].locId].temperature, id: 'nearTemp6', className: 'temperature_2', dataType:"temperature", imgSrc: null },
             { text: currentObs[nearbyLocs[5].locId].windDirectionCardinal, id: 'nearWindDir6', className: 'windDir_2', dataType:"windDirectionCardinal", imgSrc: null },
             { text: currentObs[nearbyLocs[5].locId].windSpeed, id: 'nearWindSpeed6', className: 'windSpeed_2', dataType:"windSpeed", imgSrc: null },
             // Nearby City 7
-            { text: currentObs[nearbyLocs[6].locId].city, id: 'nearCity7', className: 'city_3', dataType:"city", imgSrc: `./images/wxicons/${currentObs[nearbyLocs[6].locId].iconCode}.png` },
+            { text: currentObs[nearbyLocs[6].locId].city, id: 'nearCity7', className: 'city_3', dataType:"city", imgSrc: `./images/wxicons/${weatherIcons}/${currentObs[nearbyLocs[6].locId].iconCode}.png` },
             { text: currentObs[nearbyLocs[6].locId].temperature, id: 'nearTemp7', className: 'temperature_3', dataType:"temperature", imgSrc: null },
             { text: currentObs[nearbyLocs[6].locId].windDirectionCardinal, id: 'nearWindDir7', className: 'windDir_3', dataType:"windDirectionCardinal", imgSrc: null },
             { text: currentObs[nearbyLocs[6].locId].windSpeed, id: 'nearWindSpeed7', className: 'windSpeed_3', dataType:"windSpeed", imgSrc: null },
             // Nearby City 8
-            { text: currentObs[nearbyLocs[7].locId].city, id: 'nearCity8', className: 'city_4', dataType:"city", imgSrc: `./images/wxicons/${currentObs[nearbyLocs[7].locId].iconCode}.png` },
+            { text: currentObs[nearbyLocs[7].locId].city, id: 'nearCity8', className: 'city_4', dataType:"city", imgSrc: `./images/wxicons/${weatherIcons}/${currentObs[nearbyLocs[7].locId].iconCode}.png` },
             { text: currentObs[nearbyLocs[7].locId].temperature, id: 'nearTemp8', className: 'temperature_4', dataType:"temperature", imgSrc: null },
             { text: currentObs[nearbyLocs[7].locId].windDirectionCardinal, id: 'nearWindDir8', className: 'windDir_4', dataType:"windDirectionCardinal", imgSrc: null },
             { text: currentObs[nearbyLocs[7].locId].windSpeed, id: 'nearWindSpeed8', className: 'windSpeed_4', dataType:"windSpeed", imgSrc: null },
@@ -183,31 +183,31 @@ const Core = async (locale) => {
             { text: sevenDay[primaryLoc.locId].days[0].high, id: 'extHigh1', className: 'high1', dataType:"high_0", imgSrc: null },
             { text: "/", id: 'extSlash1', className: 'slash1', imgSrc: null },
             { text: sevenDay[primaryLoc.locId].days[0].low, id: 'extLow1', className: 'low1', dataType:"low_0", imgSrc: null },
-            { text: sevenDay[primaryLoc.locId].days[0].phrase, id: 'extPhrase1', className: 'phrase1', dataType:"phrase_0", imgSrc: `./images/wxicons/${sevenDay[primaryLoc.locId].days[0].icon}.png` },
+            { text: sevenDay[primaryLoc.locId].days[0].phrase, id: 'extPhrase1', className: 'phrase1', dataType:"phrase_0", imgSrc: `./images/wxicons/${weatherIcons}/${sevenDay[primaryLoc.locId].days[0].icon}.png` },
             // Day 2
             { text: sevenDay[primaryLoc.locId].days[1].name, id: 'extName2', className: 'name2', dataType:"name_1", imgSrc: null },
             { text: sevenDay[primaryLoc.locId].days[1].high, id: 'extHigh2', className: 'high2', dataType:"high_1", imgSrc: null },
             { text: "/", id: 'extSlash2', className: 'slash2', imgSrc: null },
             { text: sevenDay[primaryLoc.locId].days[1].low, id: 'extLow2', className: 'low2', dataType:"low_1", imgSrc: null },
-            { text: sevenDay[primaryLoc.locId].days[1].phrase, id: 'extPhrase2', className: 'phrase2', dataType:"phrase_1", imgSrc: `./images/wxicons/${sevenDay[primaryLoc.locId].days[1].icon}.png` },
+            { text: sevenDay[primaryLoc.locId].days[1].phrase, id: 'extPhrase2', className: 'phrase2', dataType:"phrase_1", imgSrc: `./images/wxicons/${weatherIcons}/${sevenDay[primaryLoc.locId].days[1].icon}.png` },
             // Day 3
             { text: sevenDay[primaryLoc.locId].days[2].name, id: 'extName3', className: 'name3', dataType:"name_2", imgSrc: null },
             { text: sevenDay[primaryLoc.locId].days[2].high, id: 'extHigh3', className: 'high3', dataType:"high_2", imgSrc: null },
             { text: "/", id: 'extSlash3', className: 'slash3', imgSrc: null },
             { text: sevenDay[primaryLoc.locId].days[2].low, id: 'extLow3', className: 'low3', dataType:"low_2", imgSrc: null },
-            { text: sevenDay[primaryLoc.locId].days[2].phrase, id: 'extPhrase3', className: 'phrase3', dataType:"phrase_2", imgSrc: `./images/wxicons/${sevenDay[primaryLoc.locId].days[2].icon}.png` },
+            { text: sevenDay[primaryLoc.locId].days[2].phrase, id: 'extPhrase3', className: 'phrase3', dataType:"phrase_2", imgSrc: `./images/wxicons/${weatherIcons}/${sevenDay[primaryLoc.locId].days[2].icon}.png` },
             // Day 4
             { text: sevenDay[primaryLoc.locId].days[3].name, id: 'extName4', className: 'name4', dataType:"name_3", imgSrc: null },
             { text: sevenDay[primaryLoc.locId].days[3].high, id: 'extHigh4', className: 'high4', dataType:"high_3", imgSrc: null },
             { text: "/", id: 'extSlash4', className: 'slash4', imgSrc: null },
             { text: sevenDay[primaryLoc.locId].days[3].low, id: 'extLow4', className: 'low4', dataType:"low_3", imgSrc: null },
-            { text: sevenDay[primaryLoc.locId].days[3].phrase, id: 'extPhrase4', className: 'phrase4', dataType:"phrase_3", imgSrc: `./images/wxicons/${sevenDay[primaryLoc.locId].days[3].icon}.png` },
+            { text: sevenDay[primaryLoc.locId].days[3].phrase, id: 'extPhrase4', className: 'phrase4', dataType:"phrase_3", imgSrc: `./images/wxicons/${weatherIcons}/${sevenDay[primaryLoc.locId].days[3].icon}.png` },
             // Day 5
             { text: sevenDay[primaryLoc.locId].days[4].name, id: 'extName5', className: 'name5', dataType:"name_4", imgSrc: null },
             { text: sevenDay[primaryLoc.locId].days[4].high, id: 'extHigh5', className: 'high5', dataType:"high_4", imgSrc: null },
             { text: "/", id: 'extSlash5', className: 'slash5', imgSrc: null },
             { text: sevenDay[primaryLoc.locId].days[4].low, id: 'extLow5', className: 'low5', dataType:"low_4", imgSrc: null },
-            { text: sevenDay[primaryLoc.locId].days[4].phrase, id: 'extPhrase5', className: 'phrase5', dataType:"phrase_4", imgSrc: `./images/wxicons/${sevenDay[primaryLoc.locId].days[4].icon}.png` },
+            { text: sevenDay[primaryLoc.locId].days[4].phrase, id: 'extPhrase5', className: 'phrase5', dataType:"phrase_4", imgSrc: `./images/wxicons/${weatherIcons}/${sevenDay[primaryLoc.locId].days[4].icon}.png` },
         ]},
         { id: 'Almanac', src: './images/background/' + locale + '/almanac.png', text: 'Almanac', noFade: false, duration: 10, slide: './images/Slide_Almanac.png', overlay: './images/Plus_Product.png', fields:[
             // Text Labels
