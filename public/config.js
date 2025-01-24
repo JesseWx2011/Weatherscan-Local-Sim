@@ -5,7 +5,7 @@ import { Core, MiniCore } from './packages.js';
 // Locale configuration (neighborhood, oceaneast, urban, southwest)
 const locale = "neighborhood";
 
-const affiliateName = "Comcast Digital Cable";
+const affiliateName = "Verizon";
 
 const apiKey = '8de2d8b3a93542c9a2d8b3a935a2c909';
 
