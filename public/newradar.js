@@ -2,7 +2,7 @@ import mapboxgl from 'https://esm.sh/mapbox-gl@3.9.0';
 import { apiKey } from './config.js';
 import { primaryLoc, dataPopulationPromise } from './data.js';
 
-mapboxgl.accessToken = '';
+mapboxgl.accessToken = 'pk.eyJ1Ijoid2VhdGhlciIsImEiOiJjaW4wbzllcjkwYWtrd2JsdWl3dG1hZjZ1In0.AdcjoWQiVfvjHfOB0nsyeQ';
 
 const state = {
     radarTimestamps: [],
